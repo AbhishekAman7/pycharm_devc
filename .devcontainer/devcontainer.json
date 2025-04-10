@@ -1,0 +1,37 @@
+// For format details, see https://aka.ms/devcontainer.json
+{
+  "name": "Python 3 DevContainer",
+
+  // Build the container from a local Dockerfile
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  // Mount persistent JetBrains backend cache (for PyCharm)
+  "mounts": [
+    "source=pycharm-backend,target=/root/.cache/JetBrains,type=volume"
+  ],
+
+  // Automatically install Python dependencies after container starts
+  "postCreateCommand": "pip3 install --user -r requirements.txt",
+
+  // Expose common development ports (Flask, Django, etc.)
+  "forwardPorts": [5000, 8000],
+
+  // IDE-specific customizations
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    },
+    "jetbrains": {
+      "backend": "PyCharm"
+    }
+  }
+
+  // Optional: Uncomment if you want the container to run as root
+  // "remoteUser": "root"
+}
