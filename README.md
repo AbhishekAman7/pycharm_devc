@@ -2,6 +2,7 @@
 In PyCharm, if you have multiple Python files in your project and you want to control which one runs first, here’s exactly how to do it:
 
 ⸻
+https://chatgpt.com/share/68e622fb-6248-8012-a6ae-469fdc625f7c
 
 Step-by-step: Set the main Python file to run
 
